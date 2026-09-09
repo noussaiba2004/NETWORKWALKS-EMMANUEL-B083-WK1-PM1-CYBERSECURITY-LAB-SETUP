@@ -44,3 +44,43 @@ Inside the Kali OS, the network interface was configured to maintain a persisten
 After successfully configuring the network and resolving VirtualBox NAT routing limitations by executing a clean re-import, the machine (`my noussakali`) is fully operational. A clean baseline snapshot was taken to allow instant restoration during destructive testing scenarios.
 
 > 📸 **Running State:** `snapshot.png`
+> ## 🎯 Purpose of the Lab
+The primary goal of this laboratory is to establish a secure, localized sandbox environment. This setup allows for the safe execution of penetration testing tools, malware analysis, and network scanning without risking exposure or interference with the physical host machine or the external local area network (LAN).
+
+## ✅ Objectives
+* Deploy a Type-2 Hypervisor (VirtualBox) for virtualization.
+* Import and configure a pre-built Kali Linux virtual machine.
+* Design an isolated `NAT Network` with a dedicated subnet (`10.0.0.0/24`).
+* Assign and enforce a static IP address (`10.0.0.2`) for the attacker machine.
+* Troubleshoot and validate both internal gateway communication and external WAN (Internet) access.
+
+## 🔍 Lab Verification
+To confirm the environment was fully operational, the following connectivity tests were executed via the Kali Linux terminal:
+1. **Local Gateway Connectivity:** `ping -c 4 10.0.0.1` (0% packet loss) - Confirmed connection to the VirtualBox NAT router.
+2. **DNS Resolution & WAN Access:** `ping -c 4 google.com` - Confirmed outbound internet access required for downloading external packages and updates.
+
+## ⚠️ Problems Encountered & Solutions
+* **Issue:** VirtualBox NAT Network Bug (Temporary failure in name resolution / Destination Host Unreachable). Despite a correct static IP and gateway configuration, Kali Linux failed to route traffic to the external internet.
+* **Troubleshooting Steps:** 
+  * Verified routing tables using `ip route`.
+  * Tested direct external IPs (`ping 8.8.8.8`) to isolate DNS issues from routing blocks.
+  * Monitored network interfaces using `nmcli device status`.
+* **Solution:** The VirtualBox v7 NAT engine occasionally fails to initialize the routing bridge correctly. The solution was to completely remove the corrupted NAT Network, perform a clean re-import of the Kali Linux VM appliance to reset MAC addresses, and reapply the static IP configurations.
+
+## 🧠 What I Learned
+* **Advanced Virtualization Networking:** Deepened my understanding of how hypervisors handle NAT, bridging, and internal routing.
+* **Linux Network Management:** Gained hands-on experience using the `nmcli` (NetworkManager Command Line Interface) utility to manipulate interfaces, gateways, and DNS settings directly from the terminal.
+* **Systematic Troubleshooting:** Improved my methodology for diagnosing network blocks by isolating layers (Local IP -> Gateway -> DNS -> External IP).
+
+## 🧰 Tools & Resources
+* **Hypervisor:** [Oracle VM VirtualBox](https://www.virtualbox.org/) (v7+)
+* **OS:** [Kali Linux](https://www.kali.org/) (2026.2 VirtualBox amd64 Image)
+* **Archive Utility:** 7-Zip
+* **Curriculum:** Networkwalks Cybersecurity Internship Lab Manual
+
+---
+
+## 👨‍💻 Author
+**Noussaiba Aouad**  
+*Master's Student in Cryptography and Information Security | Université Mohammed V*  
+Passionate about ethical hacking, network analysis, and cryptographic algorithm implementations.
