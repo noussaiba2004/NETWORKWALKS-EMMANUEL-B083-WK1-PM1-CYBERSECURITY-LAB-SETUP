@@ -38,7 +38,7 @@ Inside the Kali OS, the network interface was configured to maintain a persisten
 * **Gateway:** `10.0.0.1`
 * **DNS:** `8.8.8.8`
 
-> ![📸 **Kali Network Manager:**](Interkali.jpg)
+> ![📸 **Kali Network Manager:**](Interkali.png)
 
 ### 4. Baseline Snapshot & Deployment
 After successfully configuring the network and resolving VirtualBox NAT routing limitations by executing a clean re-import, the machine (`my noussakali`) is fully operational. A clean baseline snapshot was taken to allow instant restoration during destructive testing scenarios.
