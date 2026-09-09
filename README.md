@@ -19,7 +19,7 @@ A dedicated NAT Network was established to host the attacker machine and future 
 * **Name:** `NatNetwork`
 * **IPv4 Prefix:** `10.0.0.0/24` with DHCP enabled.
 
-> ![📸 **Configuration:**] (Nat.png)
+> ![📸 **Configuration:**](Nat.png)
 
 ### 2. Kali Linux VM Parameters
 The pre-built Kali Linux virtual appliance was imported and optimized for performance, seamless host interaction, and network visibility:
