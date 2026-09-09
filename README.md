@@ -9,13 +9,13 @@ The environment relies on a custom NAT Network to isolate traffic during securit
 * **Attacker OS:** Kali Linux 2026.2 (amd64)
 * **Subnet:** `10.0.0.0/24`
 * **Attacker IP:** `10.0.0.2` (Static)
-`/Images/VBox.png`
+`VBox.png`
 ---
 
 ## 🚀 Configuration Steps
 
 ### 1. Global NAT Network Setup
-A dedicated NAT Network was established to host the attacker machine and future vulnerable targets on the same local subnet[cite: 2].
+A dedicated NAT Network was established to host the attacker machine and future vulnerable targets on the same local subnet.
 * **Name:** `NatNetwork`
 * **IPv4 Prefix:** `10.0.0.0/24` with DHCP enabled.
 
@@ -32,7 +32,7 @@ The pre-built Kali Linux virtual appliance was imported and optimized for perfor
 > 📸 **Host Integration:** `kaliconfig4.png`
 
 ### 3. Internal IP Configuration
-Inside the Kali OS, the network interface was configured to maintain a persistent static IP, ensuring reliable connectivity to the gateway[cite: 2]. 
+Inside the Kali OS, the network interface was configured to maintain a persistent static IP, ensuring reliable connectivity to the gateway. 
 * **IP Address:** `10.0.0.2`
 * **Netmask:** `24`
 * **Gateway:** `10.0.0.1`
