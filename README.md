@@ -9,7 +9,7 @@ The environment relies on a custom NAT Network to isolate traffic during securit
 * **Attacker OS:** Kali Linux 2026.2 (amd64)
 * **Subnet:** `10.0.0.0/24`
 * **Attacker IP:** `10.0.0.2` (Static)
-`VBox.png`
+[](VBox.png)
 ---
 
 ## 🚀 Configuration Steps
@@ -19,7 +19,7 @@ A dedicated NAT Network was established to host the attacker machine and future 
 * **Name:** `NatNetwork`
 * **IPv4 Prefix:** `10.0.0.0/24` with DHCP enabled.
 
-> 📸 **Configuration:** `Nat.png`
+> [📸 **Configuration:**] (Nat.png)
 
 ### 2. Kali Linux VM Parameters
 The pre-built Kali Linux virtual appliance was imported and optimized for performance, seamless host interaction, and network visibility:
@@ -27,9 +27,9 @@ The pre-built Kali Linux virtual appliance was imported and optimized for perfor
 * **Network Adapter:** Attached to `NatNetwork` with Promiscuous Mode set to `Allow All` for deep packet inspection and network sniffing.
 * **Shared Folders:** Configured a bidirectional auto-mounted folder to the host's `Downloads` directory for efficient file transfers.
 
-> 📸 **System Settings:** `kaliconfig2.png` & `kaliconfig3.png`
-> 📸 **Network Adapter:** `kaliconfig1.png`
-> 📸 **Host Integration:** `kaliconfig4.png`
+> [📸 **System Settings:**](kaliconfig2.png) & [](kaliconfig3.png)
+> [📸 **Network Adapter:**](kaliconfig1.png)
+> [📸 **Host Integration:**](kaliconfig4.png)
 
 ### 3. Internal IP Configuration
 Inside the Kali OS, the network interface was configured to maintain a persistent static IP, ensuring reliable connectivity to the gateway. 
@@ -38,12 +38,12 @@ Inside the Kali OS, the network interface was configured to maintain a persisten
 * **Gateway:** `10.0.0.1`
 * **DNS:** `8.8.8.8`
 
-> 📸 **Kali Network Manager:** `Interkali.jpg`
+> [📸 **Kali Network Manager:**](Interkali.jpg)
 
 ### 4. Baseline Snapshot & Deployment
 After successfully configuring the network and resolving VirtualBox NAT routing limitations by executing a clean re-import, the machine (`my noussakali`) is fully operational. A clean baseline snapshot was taken to allow instant restoration during destructive testing scenarios.
 
-> 📸 **Running State:** `snapshot.png`
+> [📸 **Running State:**](snapshot.png)
  ## 🎯 Purpose of the Lab
 The primary goal of this laboratory is to establish a secure, localized sandbox environment. This setup allows for the safe execution of penetration testing tools, malware analysis, and network scanning without risking exposure or interference with the physical host machine or the external local area network (LAN).
 
