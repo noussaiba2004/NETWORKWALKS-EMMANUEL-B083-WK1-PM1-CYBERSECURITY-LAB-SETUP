@@ -4,28 +4,28 @@
 This repository details the foundational attack laboratory configured for the Networkwalks Cybersecurity Internship. It serves as a secure, isolated environment for penetration testing, network analysis, and vulnerability assessment, bridging practical ethical hacking techniques with advanced concepts in Cryptography and Information Security.
 
 ## 🛠️ Architecture & Network Design
-The environment relies on a custom NAT Network to isolate traffic during security operations while maintaining internet connectivity for the attacker machine[cite: 2].
+The environment relies on a custom NAT Network to isolate traffic during security operations while maintaining internet connectivity for the attacker machine.
 * **Hypervisor:** Oracle VirtualBox
 * **Attacker OS:** Kali Linux 2026.2 (amd64)
-* **Subnet:** `10.0.0.0/24`[cite: 2]
-* **Attacker IP:** `10.0.0.2` (Static)[cite: 2]
-
+* **Subnet:** `10.0.0.0/24`
+* **Attacker IP:** `10.0.0.2` (Static)
+`VBox.png`
 ---
 
 ## 🚀 Configuration Steps
 
 ### 1. Global NAT Network Setup
 A dedicated NAT Network was established to host the attacker machine and future vulnerable targets on the same local subnet[cite: 2].
-* **Name:** `NatNetwork`[cite: 2]
-* **IPv4 Prefix:** `10.0.0.0/24` with DHCP enabled[cite: 2].
+* **Name:** `NatNetwork`
+* **IPv4 Prefix:** `10.0.0.0/24` with DHCP enabled.
 
 > 📸 **Configuration:** `Nat.png`
 
 ### 2. Kali Linux VM Parameters
 The pre-built Kali Linux virtual appliance was imported and optimized for performance, seamless host interaction, and network visibility:
 * **System & Acceleration:** Allocated 2048 MB of RAM with hardware virtualization (Nested Paging) enabled to ensure smooth execution of heavy cryptographic and security tools.
-* **Network Adapter:** Attached to `NatNetwork` with Promiscuous Mode set to `Allow All` for deep packet inspection and network sniffing[cite: 2].
-* **Shared Folders:** Configured a bidirectional auto-mounted folder to the host's `Downloads` directory for efficient file transfers[cite: 2].
+* **Network Adapter:** Attached to `NatNetwork` with Promiscuous Mode set to `Allow All` for deep packet inspection and network sniffing.
+* **Shared Folders:** Configured a bidirectional auto-mounted folder to the host's `Downloads` directory for efficient file transfers.
 
 > 📸 **System Settings:** `kaliconfig2.png` & `kaliconfig3.png`
 > 📸 **Network Adapter:** `kaliconfig1.png`
@@ -33,10 +33,10 @@ The pre-built Kali Linux virtual appliance was imported and optimized for perfor
 
 ### 3. Internal IP Configuration
 Inside the Kali OS, the network interface was configured to maintain a persistent static IP, ensuring reliable connectivity to the gateway[cite: 2]. 
-* **IP Address:** `10.0.0.2`[cite: 2]
-* **Netmask:** `24`[cite: 2]
-* **Gateway:** `10.0.0.1`[cite: 2]
-* **DNS:** `8.8.8.8`[cite: 2]
+* **IP Address:** `10.0.0.2`
+* **Netmask:** `24`
+* **Gateway:** `10.0.0.1`
+* **DNS:** `8.8.8.8`
 
 > 📸 **Kali Network Manager:** `Interkali.jpg`
 
