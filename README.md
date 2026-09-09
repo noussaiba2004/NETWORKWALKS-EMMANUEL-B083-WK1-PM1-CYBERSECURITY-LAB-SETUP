@@ -9,7 +9,7 @@ The environment relies on a custom NAT Network to isolate traffic during securit
 * **Attacker OS:** Kali Linux 2026.2 (amd64)
 * **Subnet:** `10.0.0.0/24`
 * **Attacker IP:** `10.0.0.2` (Static)
-[](VBox.png)
+![](VBox.png)
 ---
 
 ## 🚀 Configuration Steps
