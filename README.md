@@ -60,12 +60,9 @@ To confirm the environment was fully operational, the following connectivity tes
 2. **DNS Resolution & WAN Access:** `ping -c 4 google.com` - Confirmed outbound internet access required for downloading external packages and updates.
 
 ## ⚠️ Problems Encountered & Solutions
-* **Issue:** VirtualBox NAT Network Bug (Temporary failure in name resolution / Destination Host Unreachable). Despite a correct static IP and gateway configuration, Kali Linux failed to route traffic to the external internet.
-* **Troubleshooting Steps:** 
-  * Verified routing tables using `ip route`.
-  * Tested direct external IPs (`ping 8.8.8.8`) to isolate DNS issues from routing blocks.
-  * Monitored network interfaces using `nmcli device status`.
-* **Solution:** The VirtualBox v7 NAT engine occasionally fails to initialize the routing bridge correctly. The solution was to completely remove the corrupted NAT Network, perform a clean re-import of the Kali Linux VM appliance to reset MAC addresses, and reapply the static IP configurations.
+* **Issue:** The Kali Linux machine had no external internet connection (DNS resolution failures and "Destination Host Unreachable" errors), even though the internal NAT Network was properly configured with the correct static IP (`10.0.0.2`) and gateway (`10.0.0.1`).
+* **Troubleshooting Steps:** I initially executed the troubleshooting commands provided in the official Lab Setup manual (such as adjusting network manager settings and changing the DNS server), but these did not resolve the problem. I also verified the routing tables and interface statuses using `nmcli`.
+* **Solution:** Concluding that the issue was a bug within VirtualBox's initial handling of the VM import and NAT network binding, the definitive solution was to **completely delete the virtual machine from VirtualBox and re-import the Kali Linux appliance from scratch**. After re-adding the machine and reapplying the setup, the internet connection and NAT routing worked flawlessly.
 
 ## 🧠 What I Learned
 * **Advanced Virtualization Networking:** Deepened my understanding of how hypervisors handle NAT, bridging, and internal routing.
@@ -75,8 +72,8 @@ To confirm the environment was fully operational, the following connectivity tes
 ## 🧰 Tools & Resources
 * **Hypervisor:** [Oracle VM VirtualBox](https://www.virtualbox.org/) (v7+)
 * **OS:** [Kali Linux](https://www.kali.org/) (2026.2 VirtualBox amd64 Image)
-* **Archive Utility:** 7-Zip
-* **Curriculum:** Networkwalks Cybersecurity Internship Lab Manual
+* **Archive Utility:** [7-Zip]( https://7-zip.org/download.html)
+* **Curriculum:** [Networkwalks Cybersecurity Internship Lab Manual](https://networkwalks.com/)
 
 ---
 
@@ -84,3 +81,4 @@ To confirm the environment was fully operational, the following connectivity tes
 **Noussaiba Aouad**  
 *Master's Student in Cryptography and Information Security | Université Mohammed V*  
 Passionate about ethical hacking, network analysis, and cryptographic algorithm implementations.
+[MY LinkedIn](www.linkedin.com/in/noussaiba-aouad-886836316)
