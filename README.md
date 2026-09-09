@@ -1,4 +1,4 @@
-# 🛡️ Cybersecurity Lab Setup: VirtualBox & Kali Linux
+# 🔐 Cybersecurity Lab Environment Setup
 
 ## 📝 Project Overview
 This repository details the foundational attack laboratory configured for the Networkwalks Cybersecurity Internship. It serves as a secure, isolated environment for penetration testing, network analysis, and vulnerability assessment, bridging practical ethical hacking techniques with advanced concepts in Cryptography and Information Security.
