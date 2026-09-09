@@ -44,7 +44,7 @@ Inside the Kali OS, the network interface was configured to maintain a persisten
 After successfully configuring the network and resolving VirtualBox NAT routing limitations by executing a clean re-import, the machine (`my noussakali`) is fully operational. A clean baseline snapshot was taken to allow instant restoration during destructive testing scenarios.
 
 > 📸 **Running State:** `snapshot.png`
-> ## 🎯 Purpose of the Lab
+ ## 🎯 Purpose of the Lab
 The primary goal of this laboratory is to establish a secure, localized sandbox environment. This setup allows for the safe execution of penetration testing tools, malware analysis, and network scanning without risking exposure or interference with the physical host machine or the external local area network (LAN).
 
 ## ✅ Objectives
